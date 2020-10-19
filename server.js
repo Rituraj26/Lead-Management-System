@@ -6,12 +6,14 @@ const errorHandler = require('./middleware/error');
 const app = express();
 
 const auth = require('./routes/auth');
+const leads = require('./routes/leads');
 
 // Use Middleware
 app.use(bodyParser.json());
 
 // Use the routes
 app.use('/auth', auth);
+app.use('/leads', leads);
 
 app.use(errorHandler);
 
